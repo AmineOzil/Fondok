@@ -5,12 +5,13 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:local="clr-namespace:Fondok.Views"
   xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:prism="http://prismlibrary.com/"
   xmlns:vm="clr-namespace:Fondok.ViewModels"
   prism:ViewModelLocator.AutoWireViewModel="True"
-  mc:Ignorable="d" Loaded="UserControl_Loaded"
-    >
+  Loaded="UserControl_Loaded"
+  mc:Ignorable="d">
   <Grid Margin="18">
 
     <Grid.RowDefinitions>
@@ -23,59 +24,81 @@
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
 
-      <lvc:CartesianChart
-        Grid.Column="0"
-        LegendLocation="Left"
-        Series="{Binding CartesianSeriesCollection}">
-        <lvc:CartesianChart.AxisX>
-          <lvc:Axis Title="Salesman" Labels="{Binding CartesianLabels}" />
-        </lvc:CartesianChart.AxisX>
-        <lvc:CartesianChart.AxisY>
-          <lvc:Axis Title="Sold Apps" LabelFormatter="{Binding CartesianFormatter}" />
-        </lvc:CartesianChart.AxisY>
-      </lvc:CartesianChart>
+      <Grid Grid.Column="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+
+        <materialDesign:Card
+          Grid.Row="0"
+          Padding="16"
+          materialDesign:ShadowAssist.ShadowDepth="Depth1">
+          <TextBlock x:Name="TotalRooms" />
+        </materialDesign:Card>
+        <materialDesign:Card
+          Grid.Row="1"
+          Padding="16"
+          materialDesign:ShadowAssist.ShadowDepth="Depth1">
+          <TextBlock x:Name="TotalClients" />
+
+        </materialDesign:Card>
+
+        <materialDesign:Card
+          Grid.Row="2"
+          Padding="16"
+          materialDesign:ShadowAssist.ShadowDepth="Depth1">
+          <TextBlock x:Name="TotalEmployees" />
+
+        </materialDesign:Card>
+      </Grid>
       <lvc:PieChart
         x:Name="RoomsStatsCircle"
         Grid.Column="1"
-        DataClick=" PieChart_OnDataClick"
+        DataClick="PieChartOnDataClick"
         DataTooltip="{x:Null}"
         Hoverable="False"
         LegendLocation="Bottom">
-        <!--<lvc:PieChart.Series
-            Series="{Binding RommsStats}">
-          <lvc:PieSeries 
-            Title="Reserved"
+        <lvc:PieChart.Series>
+          <lvc:PieSeries
+            Title="Maria"
             DataLabels="True"
-            LabelPoint="{Binding PiePointLabel}"
+            LabelPoint="{Binding PointLabel}"
+            Values="3" />
+          <lvc:PieSeries
+            Title="Charles"
+            DataLabels="True"
+            LabelPoint="{Binding PointLabel}"
             Values="4" />
-           <lvc:PieSeries
-            Title="NOT Reserved"
+          <lvc:PieSeries
+            Title="Frida"
             DataLabels="True"
-            LabelPoint="{Binding PiePointLabel}"
+            LabelPoint="{Binding PointLabel}"
             Values="6" />
           <lvc:PieSeries
-            Title="OUT service"
+            Title="Frederic"
             DataLabels="True"
-            LabelPoint="{Binding PiePointLabel}"
+            LabelPoint="{Binding PointLabel}"
             Values="2" />
-        </lvc:PieChart.Series>-->
+        </lvc:PieChart.Series>
       </lvc:PieChart>
 
-    </Grid>
-    <Grid Grid.Row="1">
-
-      <lvc:CartesianChart LegendLocation="Right" Series="{Binding LineSeriesCollection}">
-        <lvc:CartesianChart.AxisY>
-          <lvc:Axis Title="Sales" LabelFormatter="{Binding LineYFormatter}" />
-        </lvc:CartesianChart.AxisY>
-        <lvc:CartesianChart.AxisX>
-          <lvc:Axis Title="Month" Labels="{Binding LineLabels}" />
-        </lvc:CartesianChart.AxisX>
-      </lvc:CartesianChart>
 
     </Grid>
-
+    <Grid Grid.Row="1" />
+    <lvc:CartesianChart
+      Grid.Row="1"
+      LegendLocation="Bottom"
+      Series="{Binding IncomesSeriesCollection}">
+      <lvc:CartesianChart.AxisY>
+        <lvc:Axis Title="Incomes" LabelFormatter="{Binding IncomesYFormatter}" />
+      </lvc:CartesianChart.AxisY>
+      <lvc:CartesianChart.AxisX>
+        <lvc:Axis Title="Month" Labels="{Binding IncomesLabels}" />
+      </lvc:CartesianChart.AxisX>
+    </lvc:CartesianChart>
 
   </Grid>
 </UserControl>

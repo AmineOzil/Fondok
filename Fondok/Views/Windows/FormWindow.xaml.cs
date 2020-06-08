@@ -17,28 +17,23 @@ using System.Windows.Shapes;
 namespace Fondok.Views.Windows
 {
     /// <summary>
-    /// Interaction logic for EmployeeWindow.xaml
+    /// Interaction logic for FormWindow.xaml
     /// </summary>
-    public partial class EmployeeWindow : Window
+    public partial class FormWindow : Window
     {
         private int errorCount;
-        public EmployeeWindow()
+        public FormWindow()
         {
 
 
             InitializeComponent();
             DataContext = this;
-            EmployeeDateOfBirthField.DisplayDateStart = DateTime.Now.AddYears(-60);
-            EmployeeDateOfBirthField.DisplayDateEnd = DateTime.Now.AddYears(-18);
+
+
             this.AddHandler(Validation.ErrorEvent, new RoutedEventHandler(OnErrorEvent));
 
-            string[] EmployeeJobSource = new string[] { "Admin", "Receptionist" };
-
-            EmployeeJobField.ItemsSource = EmployeeJobSource;
-            EmployeeJobField.SelectedItem = -1;
-
         }
-        private void AddEmployeeClick(object sender, RoutedEventArgs e)
+        private void AddFormClick(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
 
@@ -70,41 +65,18 @@ namespace Fondok.Views.Windows
                     }
             }
 
-            AddEmployeeButton.IsEnabled = errorCount == 0;
+            AddFormButton.IsEnabled = errorCount == 0;
         }
 
-
-        public void TextBoxPreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            EmployeeDateOfBirthField.IsDropDownOpen = true;
-        }
-
-        private void TextBoxPreviewTouchDown(object sender, TouchEventArgs e)
-        {
-            EmployeeDateOfBirthField.IsDropDownOpen = true;
-        }
-
-        private void DatePickerSelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            EmployeeDateOfBirthField.IsDropDownOpen = false;
-        }
-
-        private void EmployeeFirstNameField_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void FormTitleField_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             Verif.JustChar(sender, e);
         }
+        Commands.Verifications Verif = new Commands.Verifications();
 
-        private void EmployeeLastNameField_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            Verif.JustChar(sender, e);
-        }
-        
-
-        private void EmployeePhoneField_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void FormPriceField_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             Verif.JustNum(sender, e);
         }
-        Commands.Verifications Verif = new Commands.Verifications();
     }
-    
 }

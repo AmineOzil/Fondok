@@ -12,10 +12,23 @@ namespace Fondok.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        //public static string grade;
         public MainWindow()
-        {
+        {   
             InitializeComponent();
-            ReportButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            ReservationButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+            //MessageBox.Show(LoginView.grade);
+            //if (LoginView.grade != "Admin")
+            //{
+            //    InvoiceButton.Visibility = Visibility.Collapsed;
+            //    InvoiceIcon.Visibility = Visibility.Collapsed;
+            //    FormButton.Visibility = Visibility.Collapsed;
+            //    FormIcon.Visibility = Visibility.Collapsed;
+            //    EmployeeButton.Visibility = Visibility.Collapsed;
+            //    EmployeeIcon.Visibility = Visibility.Collapsed;
+            //    ReportButton.Visibility = Visibility.Collapsed;
+            //    ReportIcon.Visibility = Visibility.Collapsed;
+            //}
 
             dateText.Text = DateTime.Now.ToLongDateString();
         }
@@ -26,7 +39,7 @@ namespace Fondok.Views
             ReservationButton.Foreground = new SolidColorBrush(Colors.White);
             RoomButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush"); 
             ClientButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush"); 
-            ServiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush"); 
+            FormButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush"); 
             InvoiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush"); 
             ReportButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             EmployeeButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
@@ -35,14 +48,14 @@ namespace Fondok.Views
 
             RoomButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ClientButton.Style = (Style)FindResource("MaterialDesignFlatButton");
-            ServiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
+            FormButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             InvoiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ReportButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             EmployeeButton.Style = (Style)FindResource("MaterialDesignFlatButton");
 
             RoomIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ClientIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
-            ServiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
+            FormIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             InvoiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ReportIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             EmployeeIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
@@ -51,11 +64,12 @@ namespace Fondok.Views
 
         private void RoomClick(object sender, RoutedEventArgs e)
         {
+            
             RoomButton.Style = (Style)FindResource("MaterialDesignRaisedAccentButton");
             RoomButton.Foreground = new SolidColorBrush(Colors.White);
             ReservationButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ClientButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
-            ServiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
+            FormButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             InvoiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReportButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             EmployeeButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
@@ -64,14 +78,14 @@ namespace Fondok.Views
 
             ReservationButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ClientButton.Style = (Style)FindResource("MaterialDesignFlatButton");
-            ServiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
+            FormButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             InvoiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ReportButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             EmployeeButton.Style = (Style)FindResource("MaterialDesignFlatButton");
 
             ReservationIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ClientIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
-            ServiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
+            FormIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             InvoiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ReportIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             EmployeeIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
@@ -84,7 +98,7 @@ namespace Fondok.Views
             ClientButton.Foreground = new SolidColorBrush(Colors.White);
             RoomButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReservationButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
-            ServiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
+            FormButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             InvoiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReportButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             EmployeeButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
@@ -92,14 +106,14 @@ namespace Fondok.Views
 
             ReservationButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             RoomButton.Style = (Style)FindResource("MaterialDesignFlatButton");
-            ServiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
+            FormButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             InvoiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ReportButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             EmployeeButton.Style = (Style)FindResource("MaterialDesignFlatButton");
 
             ReservationIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             RoomIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
-            ServiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
+            FormIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             InvoiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ReportIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             EmployeeIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
@@ -108,15 +122,15 @@ namespace Fondok.Views
 
         private void ServiceClick(object sender, RoutedEventArgs e)
         {
-            ServiceButton.Style = (Style)FindResource("MaterialDesignRaisedAccentButton");
-            ServiceButton.Foreground = new SolidColorBrush(Colors.White);
+            FormButton.Style = (Style)FindResource("MaterialDesignRaisedAccentButton");
+            FormButton.Foreground = new SolidColorBrush(Colors.White);
             RoomButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReservationButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ClientButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             InvoiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReportButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             EmployeeButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
-            ServiceIcon.Foreground = FindResource("SecondaryAccentBrush") as SolidColorBrush;
+            FormIcon.Foreground = FindResource("SecondaryAccentBrush") as SolidColorBrush;
 
             ReservationButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             RoomButton.Style = (Style)FindResource("MaterialDesignFlatButton");
@@ -141,7 +155,7 @@ namespace Fondok.Views
             RoomButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReservationButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ClientButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
-            ServiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
+            FormButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReportButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             EmployeeButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
 
@@ -151,14 +165,14 @@ namespace Fondok.Views
             ReservationButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             RoomButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ClientButton.Style = (Style)FindResource("MaterialDesignFlatButton");
-            ServiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
+            FormButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ReportButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             EmployeeButton.Style = (Style)FindResource("MaterialDesignFlatButton");
 
             ReservationIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             RoomIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ClientIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
-            ServiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
+            FormIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ReportIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             EmployeeIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
 
@@ -171,7 +185,7 @@ namespace Fondok.Views
             RoomButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReservationButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ClientButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
-            ServiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
+            FormButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             InvoiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             EmployeeButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
 
@@ -181,14 +195,14 @@ namespace Fondok.Views
             ReservationButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             RoomButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ClientButton.Style = (Style)FindResource("MaterialDesignFlatButton");
-            ServiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
+            FormButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             InvoiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             EmployeeButton.Style = (Style)FindResource("MaterialDesignFlatButton");
 
             ReservationIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             RoomIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ClientIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
-            ServiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
+            FormIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             InvoiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             EmployeeIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
         }
@@ -200,7 +214,7 @@ namespace Fondok.Views
             RoomButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReservationButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ClientButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
-            ServiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
+            FormButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             InvoiceButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
             ReportButton.Foreground = (Brush)FindResource("PrimaryHueMidBrush");
 
@@ -210,14 +224,14 @@ namespace Fondok.Views
             ReservationButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             RoomButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ClientButton.Style = (Style)FindResource("MaterialDesignFlatButton");
-            ServiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
+            FormButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             InvoiceButton.Style = (Style)FindResource("MaterialDesignFlatButton");
             ReportButton.Style = (Style)FindResource("MaterialDesignFlatButton");
 
             ReservationIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             RoomIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ClientIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
-            ServiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
+            FormIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             InvoiceIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
             ReportIcon.Foreground = FindResource("PrimaryHueMidBrush") as SolidColorBrush;
         }
@@ -228,11 +242,12 @@ namespace Fondok.Views
         private void WindowClosing(object sender, CancelEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Are you sure to Exit? Mainwindow", "Exit from Fondok", MessageBoxButton.YesNo);
+
             switch (result)
             {
                 case MessageBoxResult.Yes:
                     //MessageBox.Show("Good Bye :) Mainwindow", "Fondok");
-
+                  
 
                     //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                     Application.Current.Shutdown();
@@ -249,7 +264,11 @@ namespace Fondok.Views
 
         private void LogOut(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //this.Close();
+            this.Hide();
+            LoginView n = new Views.LoginView();
+            n.Show();
+
         }
 
 

@@ -80,10 +80,10 @@
         Grid.Row="2"
         Grid.Column="1"
         Width="256"
-        Height="32"
         HorizontalAlignment="Left"
         VerticalAlignment="Center"
-        materialDesign:HintAssist.Hint="Username" />
+        materialDesign:HintAssist.Hint="Username"
+        Style="{StaticResource MaterialDesignFloatingHintTextBox}" KeyDown="userNameField_KeyDown" />
     </Grid>
     <!--  / username input  -->
 
@@ -108,9 +108,10 @@
         Grid.Row="3"
         Grid.Column="1"
         Width="256"
-        Height="32"
         HorizontalAlignment="Left"
-        materialDesign:HintAssist.Hint="Password" />
+        VerticalAlignment="Center"
+        materialDesign:HintAssist.Hint="Password"
+        Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" KeyDown="userPasswordField_KeyDown" />
     </Grid>
     <!--  / password input  -->
 
